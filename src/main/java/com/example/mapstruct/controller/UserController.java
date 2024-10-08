@@ -26,6 +26,7 @@ public class UserController {
     @Autowired
     private UserMapper userMapper;
 
+
     @PostMapping("user/create")
     public ResponseEntity<?> create(@RequestBody UserCreationRequest request) {
         return ResponseEntity.ok(userService.create(request));
