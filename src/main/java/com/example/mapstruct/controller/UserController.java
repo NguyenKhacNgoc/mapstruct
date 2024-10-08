@@ -6,7 +6,7 @@ import com.example.mapstruct.mapper.CarMapper;
 import com.example.mapstruct.mapper.GarageMapper;
 import com.example.mapstruct.mapper.UserMapper;
 import com.example.mapstruct.service.UserService;
-import org.apache.skywalking.apm.toolkit.trace.ActiveSpan;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -38,7 +38,6 @@ public class UserController {
 
     @PostMapping("garage")
     public ResponseEntity<?> garage(@RequestBody Garage request) {
-        ActiveSpan.tag("tag_key", "tag_value");
         return ResponseEntity.ok(garageMapper.toGarageResponse(request));
     }
 
